@@ -1,0 +1,27 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}
+  Sport xabarlar
+{% endblock title %}
+
+
+{% block content %}
+
+{% for news in sport_yangiliklar %}
+    <div class="container">
+        <div class="row">
+            <a href="{{ news.get_absolute_url}}">
+            <div class="row-sm-4">
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" style="width: 30%;">
+                <h2>{{ news.title }}</h2>
+            </div>
+        </a>
+        </div>
+    </div>
+{% endfor %}
+        
+
+
+{% endblock content %}
+    
