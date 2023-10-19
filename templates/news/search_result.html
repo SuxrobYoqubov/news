@@ -1,0 +1,23 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}
+Qidiruv natijalari
+{% endblock title %}
+
+
+{% block content %}
+<h2>Qidiruv natijalari</h2>
+{% for yangilik in barcha_yangiliklar %}
+<h3>
+  <a href="{% url 'news_detail_page' yangilik.slug %}" class="text-danger">
+    {{yangilik.title}}
+  </a>
+</h3>
+<p><img src="{{ yangilik.image.url }}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></p>
+<p>{{yangilik.body | truncatewords:10 }}</p>
+{% endfor %}
+
+
+
+{% endblock content %}

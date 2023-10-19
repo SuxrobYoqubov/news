@@ -1,0 +1,19 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %}
+  Foydalanuvchi Profeli
+{% endblock title %}
+{% block content %}
+  <h3>Xush kelibsiz, {{ user.username }}</h3>
+  <h2><a href="{% url 'logout' %}">Log out</a></h2>
+  <h2>Siz haqingizda ma'lumotlar</h2>
+  <img src="{{profile.photo.url}}" width="30%" alt=""><br>
+  <label for="">Username: </label><input value="{{user.username}}" readonly placeholder="Mavjud emas"><br>
+  <label for="">Tug'ilgan yilingiz: </label><input value="{{profile.date_of_birth}}" readonly placeholder="Mavjud emas"><br>
+  <label for="">Email manzil: </label><input value="{{user.email}}" readonly placeholder="Mavjud emas"> <br>
+  <label for="">Ismingiz: </label><input value="{{user.first_name}}" readonly placeholder="Mavjud emas"><br>
+  <label for="">Familyangiz: </label><input value="{{user.last_name}}" readonly placeholder="Mavjud emas"><br>
+
+  <h4 > <a href="{% url 'edit_user_information' %}" style="color: rgb(27, 4, 182);">Profilni o'zgartirish</a> | 
+    <a href="{% url 'password_change' %}" style="color: red;">Parolni almashtirish</a> </h4>
+{% endblock content %}

@@ -1,6 +1,6 @@
 {% extends 'news/base.html' %}
 {% load static %}
-
+{% load hitcount_tags %}
 {% block title %}
 Bosh sahifa
 {% endblock title %}
@@ -38,7 +38,8 @@ Bosh sahifa
               <div class="media"> <a href="{{news.get_absolute_url}}" class="media-left"> <img alt=""
                     src="{{ news.image.url }}"> </a>
                 <div class="media-body"> <a href="{{news.get_absolute_url}}" class="catg_title">
-                    {{news.title}}</a> </div>
+                    {{news.title}}</a>
+                <p><i class="fa fa-user"></i> {% get_hit_count for news %}</p></div>
               </div>
             </li>
             {% endfor %}
@@ -69,6 +70,7 @@ Bosh sahifa
                       src="{{ m.image.url }}"> <span class="overlay"></span> </a>
                   <figcaption> <a href="{{m.get_absolute_url}}">{{m.title | truncatewords:5}}</a>
                   </figcaption>
+                  <p><i class="fa fa-user"></i> {% get_hit_count for m %}</p>
                   <p>{{m.body | truncatewords:10}}...</p>
                 </figure>
               </li>
@@ -86,6 +88,7 @@ Bosh sahifa
                 <div class="media wow fadeInDown"> <a href="{{m.get_absolute_url}}" class="media-left"> <img
                       alt="" src="{{ m.image.url }}"> </a>
                   <div class="media-body"> <a href="{{m.get_absolute_url}}" class="catg_title">
+                    <p><i class="fa fa-user"></i> {% get_hit_count for news %}</p>
                       {{m.title}}</a> </div>
                 </div>
               </li>
@@ -108,7 +111,9 @@ Bosh sahifa
                         alt="" src="{{xorij.image.url}}"> <span class="overlay"></span> </a>
                     <figcaption> <a href="{{xorij.get_absolute_url}}">{{xorij.title | truncatewords:5}}</a>
                     </figcaption>
+                    <p><i class="fa fa-user"></i> {% get_hit_count for xorij %}</p>
                     <p>{{xorij.body | truncatewords:10}}...</p>
+
                   </figure>
                 </li>
               </ul>
@@ -125,6 +130,7 @@ Bosh sahifa
                   <div class="media wow fadeInDown"> <a href="{{xorij.get_absolute_url}}" class="media-left">
                       <img alt="" src="{{xorij.image.url}}"> </a>
                     <div class="media-body"> <a href="{{xorij.get_absolute_url}}" class="catg_title">
+
                         {{xorij.title}}</a> </div>
                   </div>
                 </li>
@@ -150,6 +156,8 @@ Bosh sahifa
                         alt="" src="{{t.image.url}}"> <span class="overlay"></span> </a>
                     <figcaption> <a href="{{t.get_absolute_url}}">{{t.title | truncatewords:5}}</a>
                     </figcaption>
+                                        <p><i class="fa fa-user"></i> {% get_hit_count for t %}</p>
+
                     <p>{{t.body | truncatewords:10}}</p>
                   </figure>
                 </li>

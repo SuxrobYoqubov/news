@@ -1,6 +1,6 @@
 {% extends 'news/base.html' %}
 {% load static %}
-
+{% load hitcount_tags %}
 {% block title %}
   Mahalliy xabarlar
 {% endblock title %}
@@ -14,7 +14,10 @@
             <a href="{{ news.get_absolute_url}}">
             <div class="row-sm-4">
                 <img src="{{ news.image.url }}" alt="{{ news.title }}" style="width: 30%;">
+                    <p><i class="fa fa-user"></i> {% get_hit_count for news %}</p>
+
                 <h2>{{ news.title }}</h2>
+
             </div>
         </a>
         </div>
