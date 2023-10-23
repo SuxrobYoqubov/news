@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-20 22:05+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\news_project\settings.py:115
+msgid "Uzbek"
+msgstr ""
+
+#: .\news_project\settings.py:116
+msgid "English"
+msgstr ""
+
+#: .\news_project\settings.py:117
+msgid "Russian"
+msgstr ""
+
+#: .\templates\news\base.html:40 .\templates\news\base.html:100
+
+msgid "Bosh sahifa"
+msgstr "Домашняя страница"
+
+#: .\templates\news\base.html:42 .\templates\news\base.html:106
+msgid "Biz bilan aloqa"
+msgstr "Связаться с нами"
+
+#: .\templates\news\base.html:44
+msgid "Admin sahifasi"
+msgstr "Страница администратора"
+
+#: .\templates\news\base.html:75
+msgid "Ro'yhatdan o'tish"
+msgstr "Постановка на учет"
+
+#: .\templates\news\base.html:77
+msgid "Saytga kirish"
+msgstr "Вход на сайт"
+
+#: .\templates\news\base.html:102 .\templates\news\home.html:64
+msgid "Mahalliy"
+msgstr "Местные новости"
+
+#: .\templates\news\base.html:103
+msgid "Xorij"
+msgstr "Зарубежные новости"
+
+#: .\templates\news\base.html:104 .\templates\news\home.html:149
+msgid "Texnalogiya"
+msgstr "Технологии"
+
+#: .\templates\news\base.html:105 .\templates\news\home.html:235
+msgid "Sport"
+msgstr "Спорт"
+
+#: .\templates\news\base.html:110
+msgid "Qidiruv "
+msgstr "Поиск"
+
+#: .\templates\news\base.html:120 .\templates\news\home.html:36
+msgid "So'nggi yangiliklar"
+msgstr "Последние новости"
+
+#: .\templates\news\base.html:155
+#, fuzzy
+#| msgid "Barcha bo'limlar"
+msgid "Bo'limlar"
+msgstr "Комментарии"
+
+#: .\templates\news\base.html:167
+msgid "Bog'lanish"
+msgstr "Связь"
+
+#: .\templates\news\base.html:168
+msgid "Telefon raqam"
+msgstr "Номер телефона"
+
+#: .\templates\news\base.html:169
+msgid "Telegram"
+msgstr "Телеграмма"
+
+#: .\templates\news\base.html:170
+msgid "Instagram"
+msgstr "Инстаграм"
+
+#: .\templates\news\home.html:7
+msgid 
+"Bosh sahifa"
+msgstr "Домашняя страница"
+
+#: .\templates\news\home.html:188
+msgid "Photography"
+msgstr "Фотография"
+
+#: .\templates\news\home.html:275
+msgid "Ommabop"
+msgstr "Популярные новости"
+
+#: .\templates\news\home.html:310
+msgid "Category"
+msgstr "Категория"
+
+#: .\templates\news\home.html:313
+msgid "Comments"
+msgstr ""
+
+#: .\templates\news\home.html:371
+msgid "Barcha bo'limlar"
+msgstr "Комментарии"
+
+#: .\templates\news\home.html:373
+msgid "Birini tanlang"
+msgstr "Выбери один"

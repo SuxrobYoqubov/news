@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&v&^6cxfi9!v8%c5&b=1jba^)h0k12g8n+^4d&l7-a8*21)66*'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'django-mohirdev-demo.uz', 'www.django-mohirdev-demo.uz']
 
 
 # Application definition
@@ -40,11 +41,15 @@ INSTALLED_APPS = [
     'news_app',
     'accounts',
     'hitcount',
+    'modeltranslation',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -107,7 +112,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz-uz'
+from django.utils.translation import gettext_lazy as _
+LANGUAGES = [
+    ('uz', _('Uzbek')),
+    ('en', _('English')),
+    ('ru', _('Russian')),
+]
+LOCALE_PATHS = BASE_DIR, 'locale'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 
 TIME_ZONE = 'Asia/Tashkent'
 
@@ -125,12 +138,19 @@ USE_TZ = True
 # ...
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+# server uchun ####################
+STATIC_ROOT = '/home/djangomo/django-mohirdev-demo.uz/django/staticfiles'
+STATICFILES_DIRS = '/home/djangomo/django-mohirdev-demo.uz/django/static'
+MEDIA_ROOT = '/home/djangomo/django-mohirdev-demo.uz/django/media'
+
+
+# local uchun ############################333
+# STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+# STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 MEDIA_URL = 'media/'
-MEDIA_ROOT = str(BASE_DIR.joinpath('mediafiles'))
-
+# MEDIA_ROOT = str(BASE_DIR.joinpath('mediafiles'))
+#######################
 
 
 # Default primary key field type
@@ -142,3 +162,5 @@ LOGIN_REDIRECT_URL = 'home_page'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_URL = 'login'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

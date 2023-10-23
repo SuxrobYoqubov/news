@@ -1,0 +1,7 @@
+{% load i18n %}
+{% blocktrans %}
+Templateda yozilgan so'zlar yozilar yozilari
+{% endblocktrans %}
+
+py .\manage.py makemessages -l ru yoki en 
+py .\manage.py compilemessages -l ru yoki en
