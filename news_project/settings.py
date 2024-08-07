@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 from decouple import config
 
@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'django-mohirdev-demo.uz', 'www.django-mohirdev-demo.uz']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,12 +137,18 @@ USE_TZ = True
 
 # ...
 
+# STATIC_URL = 'static/'
+# # server uchun ####################
+# STATIC_ROOT = '/home/djangomo/django-mohirdev-demo.uz/django/staticfiles'
+# STATICFILES_DIRS = '/home/djangomo/django-mohirdev-demo.uz/django/static'
+# MEDIA_ROOT = '/home/djangomo/django-mohirdev-demo.uz/django/media'
 STATIC_URL = 'static/'
-# server uchun ####################
-STATIC_ROOT = '/home/djangomo/django-mohirdev-demo.uz/django/staticfiles'
-STATICFILES_DIRS = '/home/djangomo/django-mohirdev-demo.uz/django/static'
-MEDIA_ROOT = '/home/djangomo/django-mohirdev-demo.uz/django/media'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR / 'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR / "staticfiles")
+MEDIA_ROOT = "mediafiles"
+MEDIA_URL = "/media/"
 
 # local uchun ############################333
 # STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
